@@ -27,8 +27,9 @@ session_start();
                         <li><a href="kulliyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
-                        <li><a  href=>Contact us</a></li>  
-                        <a href="logout.php" class="logout-btn">Logout</a>
+                        <li><a  href=>Contact us</a></li> 
+                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="userprofile.php"><img src="img/userprofile.png"></a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showmenu()" ></i>
