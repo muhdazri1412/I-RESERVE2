@@ -7,13 +7,13 @@ function build_calendar($month, $year,$venues) {
 
     $stmt = $mysqli->prepare('select * from venue');
     $venue  = "";
-    $first_venue = 0;
-    $i=0;
+    $first_venue = 1;
+    $i=1;
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             while($row = $result -> fetch_assoc()){
-                if($i==0){
+                if($i==1){
                     $first_venue=$row['id'];
                 }
                 $venue.="<option value= '".$row['id']."'>".$row['name']."</option>";
@@ -352,7 +352,7 @@ function checkSlots($con,$date){
                      if(isset($_GET['venues'])){
                          $venues = $_GET['venues'];
                      }else{
-                         $venues=0;
+                         $venues=1;
                      }
                      
 
