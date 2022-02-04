@@ -1,8 +1,7 @@
 <?php 
 session_start();
-
 $connect = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
-$query = "SELECT * FROM bookings";
+$query = "SELECT * FROM bookings where status = 'pending'";
 $result = mysqli_query($connect, $query);
 if (isset($_GET['status'], $_GET['id'])) {
   $stmt = mysqli_prepare($conn, "UPDATE bookings SET status = ? WHERE id = ?");
@@ -34,6 +33,7 @@ if (isset($_GET['status'], $_GET['id'])) {
 }
 .sideliaison{
   top: 8.8%;
+  height: 100%;
 
 }
 
@@ -65,7 +65,6 @@ margin-right: auto;
 width: 20%;
 
 }
-
 
 .text-center{
   background-color: #70AAAF; /* Green */
@@ -131,14 +130,15 @@ text-align: center;
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                        <li><a href="display-booking.php">All Submission</a></li>
-                        <li><a class="active" href="for approval.php">For approval</a></li>
-                        <li><a href="pending.php">Pending</a></li>
+                        <li><a  href="display-booking.php">All Submission</a></li>
+                        <li><a href="for approval.php">For approval</a></li>
+                        <li><a class="active"  href="pending.php">Pending</a></li>
                         <li><a href="accepted.php">Accepted</a></li>
                         <li><a href="rejected.php">Rejected</a></li>
                         <li><a href="addvenueliaison.php">Add venue</a></li>
                         <li><a href="">Dashboard</a></li>
-                </ul> 
+                </ul>
+            </div>     
             <i class="fa fa-bars" onclick="showmenu()" ></i>
 
         </nav>
@@ -146,7 +146,7 @@ text-align: center;
     </section>
     <br /><br />  
            <div class="container" style="width:1000px;">  
-                <h3 align="center">For approval table</h3>  
+                <h3 align="center">Rejected</h3>  
                 <br />  
         
                      <table class="table table-bordered">  
@@ -158,7 +158,7 @@ text-align: center;
                                <th >status</th>
                                <th >venue_id</th>       
                                <th >Details</th>  
-                               <th >Action</th>  
+ 
                           </tr>  
                           <?php  
 
@@ -167,7 +167,7 @@ text-align: center;
                           {  
                             $status = 0;
 
-                            
+                            $id = $row['id'];
                             echo "<tr>";
                             echo "<td>" .$row['id']. "</td>";
                             echo "<td>" .$row['matricno']. "</td>";
@@ -175,22 +175,12 @@ text-align: center;
                             echo "<td>" .$row['timeslot']. "</td>";
                             echo "<td>" .$row['status']. "</td>";
                             echo "<td>" .$row['venue_id']. "</td>";
-                            $id = $row['id'];
                             echo "<td>";
                             echo '<form action = "searchbooking.php" method = "POST">
                             <input type="hidden" name="find" value="'.$id.'"></button>
                             <input type="submit" value="View" />
                             </form> '; 
-                            echo "<td>";
-                            echo '<form action = "" method = "POST">
-                            <input type="hidden" name="reject" value="'.$id.'"></button>
-                            <input type="submit" value="reject" />
-                            </form> '; 
-                            echo "<td>";
-                            echo '<form action = "" method = "POST">
-                            <input type="hidden" name="accept" value="'.$id.'"></button>
-                            <input type="submit" value="accept" />
-                            </form> ';
+
 
                         } 
                     ?>  
@@ -231,9 +221,8 @@ text-align: center;
             
         }
     </script>
-     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 
 
 
@@ -243,25 +232,6 @@ text-align: center;
 </div>
 </BODY>
 </html>
-<?php 
 
-$connect = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
-if(isset($_POST['reject']))
-{
-  $id = $_POST['reject'];
-    $result=mysqli_query($connect, "
-        UPDATE bookings set status ='rejected' WHERE id ='$id'");
-}
-?>
-<?php 
-
-$connect = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
-if(isset($_POST['accept']))
-{
-  $id = $_POST['accept'];
-    $result=mysqli_query($connect, "
-        UPDATE bookings set status ='accepted' WHERE id ='$id'");
-}
-?>
 
 

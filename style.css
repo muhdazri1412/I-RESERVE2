@@ -1137,7 +1137,7 @@ input[type="checkbox"]{
 .sideliaison .logoutliaison{
     
     position: absolute;
-    bottom: 15px;
+    bottom: 100px;
     left:15px;
     background-color:#0F3538;
     outline: none;

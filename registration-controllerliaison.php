@@ -25,7 +25,7 @@ $num = mysqli_num_rows($result);
 
 if($num==1){
 
-  echo "Matricno already taken";
+  echo "Stadd Id already taken";
 
 }else{
 
@@ -33,7 +33,7 @@ if($num==1){
   $reg="insert into liaisonlogin(staffid,password,cpassword,username,email,Department)values('$staffid','$pass','$cpass','$name','$email','$department')";
   mysqli_query($con,$reg);
   echo '<script type="text/javascript"> alert("Registration successful") </script>';
-  header('Refresh: 0, url = /I-RESERVE/registerliaison.php');
+  header('Refresh: 0, url = registerliaison.php');
 
 
 }else echo 'Password does not match';

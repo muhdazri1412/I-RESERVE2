@@ -30,14 +30,14 @@
 
         <nav>
             
-            <a href="mainpage.html"><img src="img/IIUM.png"></a>
+            <a href=""><img src="img/IIUM.png"></a>
 
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
+                    <li><a class="active" href="">Item List</a></li>
+                        <li><a href="kulliyyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
                         <li><a  href=>Contact us</a></li>

@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $connect = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
 $query = "SELECT * FROM bookings where status = 'accepted'";
 $result = mysqli_query($connect, $query);
@@ -124,16 +124,18 @@ text-align: center;
 <section class = "header">
         <nav>
             
-            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
+            <a href="display-booking.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
-                        <li><a href=>Mahallah</a></li>
-                        <li><a href=>Stadd</a></li>
-                        <li><a  href=>Contact us</a></li>
+                        <li><a  href="display-booking.php">All Submission</a></li>
+                        <li><a href="for approval.php">For approval</a></li>
+                        <li><a href="pending.php">Pending</a></li>
+                        <li><a class="active" href="accepted.php">Accepted</a></li>
+                        <li><a href="rejected.php">Rejected</a></li>
+                        <li><a href="addvenueliaison.php">Add venue</a></li>
+                        <li><a href="">Dashboard</a></li>
                 </ul>
             </div>     
             <i class="fa fa-bars" onclick="showmenu()" ></i>
@@ -143,7 +145,7 @@ text-align: center;
     </section>
     <br /><br />  
            <div class="container" style="width:1000px;">  
-                <h3 align="center">For approval table</h3>  
+                <h3 align="center">Accepted</h3>  
                 <br />  
         
                      <table class="table table-bordered">  
@@ -190,17 +192,20 @@ text-align: center;
 
 <div class="sideliaison">
 
-    <ul>
-        <li><a>John Doe</a></li>
+<ul>
+        <li><a onclick="location.href='liaisonprofile.php';" style="cursor: pointer;"> <?php echo $_SESSION["staffid"]?> </a></li>
         <li><a onclick="location.href='display-booking.php';" style="cursor: pointer;">All submission</a></li>
         <li><a onclick="location.href='for approval.php';" style="cursor: pointer;">for approval</a></li>
+        <li><a onclick="location.href='pending.php';" style="cursor: pointer;">pending</a></li>
         <li><a onclick="location.href='accepted.php';" style="cursor: pointer;">Accepted</a></li>
         <li><a onclick="location.href='rejected.php';" style="cursor: pointer;">Rejected</a></li>
-        <li><a >Approved</a></li>
+        <li><a onclick="location.href='addvenueliaison.php';" style="cursor: pointer;">Add venue</a></li>
         <li><a>Dashboard</a></li>
     </ul>
 
-    <button class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    <form action="logout.php">
+        <button href="logout.php" class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    </form>
 
     <script>    
 
@@ -215,7 +220,8 @@ text-align: center;
             
         }
     </script>
-
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 

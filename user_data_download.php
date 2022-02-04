@@ -9,7 +9,10 @@
 
 <?php
 $con = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
-$sql = "SELECT * FROM FORM,bookings where form.matricno=bookings.matricno";
+$sql = "SELECT * ,a.matricno AS 'matricnumber'
+        FROM  form a 
+        inner join bookings b on a.book_id=b.id 
+        inner join pdf_file c on  a.book_id=c.id ";
 $result = $con->query($sql);
 
 header('Content-type: application/vnd-ms-excel');
@@ -17,13 +20,16 @@ $filename="user_data.xls";
 header("Content-Disposition:attachment;filename=\"$filename\"");
 
 echo "<table ><tr>
-    <th>id</th><th>date</th><th>timeslot</th><th>status</th>
-    <th>venue_id</th><th>book_id</th><th>First Name</th>
-    <th>Last Name</th><th>Email</th><th>Matric No</th>
-    <th>Phone Number</th><th>Advisor Phone number</th>
-    <th>Address</th><th>Organisation</th><th>Programme Name</th>
-    <th>Programme type</th><th>Total participant</th><th>Category</th></tr>";
+<th>id</th><th>date</th><th>timeslot</th><th>status</th>
+<th>venue_id</th><th>book_id</th><th>First Name</th>
+<th>Last Name</th><th>Email</th><th>Matric No</th>
+<th>Phone Number</th><th>Advisor Phone number</th>
+<th>Address</th><th>Organisation</th><th>Programme Name</th>
+<th>Programme type</th><th>Total participant</th><th>Category</th>
+echo '<th style='column-size: 4px;'>file name</th>'</tr>";
+
 while ($row = $result->fetch_assoc()) {
+    
     echo "<tr>";
     echo "<td>" .$row['id']. "</td>";
     echo "<td>" .$row['date']. "</td>";
@@ -43,6 +49,8 @@ while ($row = $result->fetch_assoc()) {
     echo "<td>" .$row['Prog_type']. "</td>";
     echo "<td>" .$row['part_tot']. "</td>";
     echo "<td>" .$row['Prog_cat']. "</td>";
+    echo "<td>" .$row['name']. "</td>";
+    
    
 }
 echo "</table>";

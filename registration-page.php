@@ -13,13 +13,13 @@
     <section class = "header">
         <nav>
 
-            <a href="mainpage.html"><img src="img/i-reserve.png"></a>
+            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
+                    <li><a class="active" href="mainpage.php">Item List</a></li>
+                        <li><a href="kulliyyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
                         <li><a  href=>Contact us</a></li>
@@ -53,7 +53,7 @@
 
 
                 <button type="submit" class="button">Register</a></button>
-                <a href="login.html" class="already">Already register? Login Here</a><br>
+                <a href="login.php" class="already">Already register? Login Here</a><br>
                 <a href="" class="guest-link">Not from IIUM? Guest register here</a><br>
             </form>
         </div>

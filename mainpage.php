@@ -18,12 +18,12 @@ session_start();
 <BODY class="page1">
     <section class = "header">
         <nav>
-            <a href="mainpage.html"><img src="img/i-reserve.png"></a>
+            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
+                    <li><a class="active" href="mainpage.php">Item List</a></li>
                         <li><a href="kulliyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
@@ -36,7 +36,7 @@ session_start();
 
         </nav>
 <div class="text-box">
-    <p><?php  $_SESSION["matricno"] ?> </p>
+
     <h1>I-RESERVE</h1>
     <p>IIUM venue and property reservation system</p>
     <br>

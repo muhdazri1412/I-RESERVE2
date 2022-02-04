@@ -98,13 +98,13 @@
 <section class = "header">
         <nav>
             
-            <a href="mainpage.html"><img src="img/i-reserve.png"></a>
+            <a href="dashboard.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html"></a></li>
-                        <li><a href="kulliyah.html"></a></li>
+                    <li><a class="active" href="mainpage.php"></a></li>
+                        <li><a href="kulliyyah.php"></a></li>
                         <li><a href=></a></li>
                         <li><a href=></a></li>
                         <li><a  href=></a></li>
@@ -124,12 +124,14 @@
 
     <ul>
     <li><a onclick="location.href='dashboard.php';" style="cursor: pointer;">Dashboard</a></li>
-        <li><a onclick="location.href='addvenue.php';" style="cursor: pointer;">Add venue</a></li>
-        <li><a onclick="location.href='registerliaison.php';" style="cursor: pointer;">Add User</a></li>
+        <li><a onclick="location.href='registerliaison.php';" style="cursor: pointer;">Add liaison officer</a></li>
+        <li><a onclick="location.href='editliaison.php';" style="cursor: pointer;">Edit liaison officer</a></li>
+        <li><a onclick="location.href='deleteliaison.php';" style="cursor: pointer;">delete liaison officer</a></li>
+        
 
     </ul>
 
-    <button class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    <button class="logoutliaison"><ion-icon name="power-sharp"><a href="mainpage.php"></a></ion-icon></button>
 
 </div>
 
@@ -138,8 +140,8 @@
     
 
         <div class="form" >
-          <form action="controller/registration-controllerliaison.php" method="post">
-                <u><h1 >Sign up</h1></u><br>
+          <form action="registration-controllerliaison.php" method="post">
+                <u><h1 >ADD LIAISON OFFICER</h1></u><br>
                 <p>Name</p>
                 <input type="text" name="username" placeholder="Username" required/>
                 <p>Staff Id<span style="color:red;">*</span></p>
@@ -177,6 +179,9 @@
 
         }
 </script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </BODY>
 
 <style>

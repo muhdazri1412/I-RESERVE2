@@ -1,69 +1,96 @@
+<?php 
+session_start();
+$connect = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
+
+
+?>
+
 
 <html>
 
 
 <style>
-.sideadmin{
-    background-color:#343a40;
-    width:13.5%;
-    height:100%;
-    top: 6.5%;
-    position:absolute;
-    left:0;
+           table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 700px;
+  margin-right: auto;
+  top: 7%;
+ 
 }
 
-
-.sideadmin ul li {
-
-    position: relative;
-    display:inline-block;
-    width:100%;
-    padding-top:8%;
-    padding-bottom:8%;
+.container h3{
     text-align: center;
-    color:white;
-    border-bottom: 2px solid rgba(0,0,0,0.3);
+    font-weight: 600;
+    margin-left: 800px
+}
+.sideliaison{
+  top: 8.8%;
 
 }
 
-.sideadmin ul li:hover {
-    background-color: #47525e;
-    border: none;
-    transition:0.3s;
+th, td {
+  text-align: left;
+  padding: 8px;
 }
 
+tr:nth-child(even) {background-color: #f2f2f2;}
 
-.sideadmin .logoutliaison{
+.text-center {
+  margin: auto;
+  width: 10%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.filter{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
     
-    position: absolute;
-    bottom: 15px;
-    left:15px;
-    background-color:#0F3538;
-    outline: none;
-    border:none;
-    color: white;
-    transform:scale(1.5);
+}
+.filter button{
+
+margin-left: auto;
+margin-right: auto;
+width: 20%;
 
 }
 
-.sideadmin .logoutliaison:hover{
-
-    transform: scale(2);
-    transition: 0.3s;
+.text-center{
+  background-color: #70AAAF; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  margin-left: 1000px;
+  margin-right: auto;
+ 
 }
-.admin nav{
-    display: flex;
-    padding: 1% 4%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #343a40;
+.text-center a
+{
+color:white;
+text-decoration: none;
+text-align: center;
+
+
+
+.text-center:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
-
 </style>
 <head>
         <meta name="viewport" content="with=device-width,initial-scale=1.0 ">
         <title>I-RESERVE</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +98,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
+        
     <style>
 
         @media(max-width: 459px){
@@ -79,8 +106,8 @@
           flex-direction: column;
         }
 
-    }
-    .form-container{
+       
+    } .form-container{
     position: absolute;
     left:15%;
     top:20%;
@@ -92,49 +119,35 @@
     
 }
 
+
     </style>
 
     </head>
-<BODY class="admin">
+<BODY class="login">
 <section class = "header">
         <nav>
             
-            <a href=""><img src="img/i-reserve.png"></a>
+            <a href="display-booking.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.php"></a></li>
-                        <li><a href=></a></li>
-                        <li><a href=></a></li>
-                        <li><a href=></a></li>
-                        <li><a  href=></a></li>
+                        <li><a  href="display-booking.php">All Submission</a></li>
+                        <li><a href="for approval.php">For approval</a></li>
+                        <li><a href="pending.php">Pending</a></li>
+                        <li><a  href="accepted.php">Accepted</a></li>
+                        <li><a href="rejected.php">Rejected</a></li>
+                        <li><a class="active" href="addvenueliaison.php">Add venue</a></li>
+                        <li><a href="">Dashboard</a></li>
                 </ul>
             </div>     
             <i class="fa fa-bars" onclick="showmenu()" ></i>
-            
 
         </nav>
 
     </section>
-
-
-
-
-<div class="sideadmin">
-
-    <ul>
-        <li><a>Dashboard</a></li>
-        <li><a onclick="location.href='addvenue.php';" style="cursor: pointer;">Add venue</a></li>
-        <li><a onclick="location.href='registerliaison.php';" style="cursor: pointer;">Add User</a></li>
-
-    </ul>
-
-    <button class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
-
-</div>
-
-<div class="form-container">
+    <br /><br />  
+    <div class="form-container">
   <div class="bf-title">Venue Details</div>
     <div class="content">
      <form  method="post" action="addvenue_controller.php">
@@ -180,14 +193,22 @@
   </div>
 </div>
 
+<div class="sideliaison">
 
+<ul>
+        <li><a onclick="location.href='liaisonprofile.php';" style="cursor: pointer;"> <?php echo $_SESSION["staffid"]?> </a></li>
+        <li><a onclick="location.href='display-booking.php';" style="cursor: pointer;">All submission</a></li>
+        <li><a onclick="location.href='for approval.php';" style="cursor: pointer;">for approval</a></li>
+        <li><a onclick="location.href='pending.php';" style="cursor: pointer;">pending</a></li>
+        <li><a onclick="location.href='accepted.php';" style="cursor: pointer;">Accepted</a></li>
+        <li><a onclick="location.href='rejected.php';" style="cursor: pointer;">Rejected</a></li>
+        <li><a onclick="location.href='addvenueliaison.php';" style="cursor: pointer;">Add venue</a></li>
+        <li><a>Dashboard</a></li>
+    </ul>
 
-
-
-
-
- 
-
+    <form action="logout.php">
+        <button href="logout.php" class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    </form>
 
     <script>    
 
@@ -202,8 +223,14 @@
             
         }
     </script>
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  
+
+
+<div align="center">
+
+
 </div>
 </BODY>
 </html>

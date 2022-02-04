@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('connect-db.php');
 
 
@@ -53,16 +54,18 @@ include('connect-db.php');
     <section class = "header">
         <nav>
             
-            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
+            <a href="display-booking.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.php">Item List</a></li>
-                        <li><a href="kulliyyah.php">Kuliyyah</a></li>
-                        <li><a href=>Mahallah</a></li>
-                        <li><a href=>Stadd</a></li>
-                        <li><a  href=>Contact us</a></li>
+                        <li><a chref="display-booking.php">All Submission</a></li>
+                        <li><a href="for approval.php">For approval</a></li>
+                        <li><a href="pending.php">Pending</a></li>
+                        <li><a href="accepted.php">Accepted</a></li>
+                        <li><a href="rejected.php">Rejected</a></li>
+                        <li><a href="addvenueliaison.php">Add venue</a></li>
+                        <li><a href="">Dashboard</a></li>
                 </ul>
             </div>     
             <i class="fa fa-bars" onclick="showmenu()" ></i>
@@ -89,48 +92,57 @@ include('connect-db.php');
 
 
 
-<div class="sidebar">
+<div class="userprofile">
 
+<div class="userprofile-header">
+<div class="matricdisplay">
+<?php 
 
-<ul>
-    <li><h2>KICT</h2></li><br>
-    <li><h4>Venue</h4></li><br>
-    <li><a class="active" href="Multipuposehall.html" >Multipurpose Hall</a><br></li>
-    <li><a href="" >Conference Room Level 5</a><br></li>
-    <li><a href="" >Classroom</a><br></li>
-    
-</ul>
+echo "<div>Hi," .$_SESSION['staffid']. "</div>";
 
+?>
+</div> 
 </div>
 
-<div class="venuedetails">
+<div class="userprofile-detail">
 
+    <div>
 
-    <ul>
-        <li><h3>Venue Details</h3></li>
+<?php 
+
+$sql = "SELECT * from liaisonlogin where staffid=$_SESSION[staffid] ";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    if ($row = $result->fetch_assoc()) {
        
-        <li><a href="" >Capacity(pax) : 200</a></li>
-        <li><a href="" >Area/sq(metre): 500</a></li>
-        <li><a href="" >Rate          : RM120/hr </a></li>
-        <li><a href="" >Facilities    : AV </a></li>
         
-    </ul>
+        echo "<div>User Details</div>";
+        echo "<p>Matric   : " .$row['staffid']. "</p>";
+        echo "<p>Username : " .$row['username']. "</p>";
+        echo "<p>E-mail   : " .$row['email']. "</p>";
+        echo "<p>Phone    : " .$row['department']. "</p>";
+       
+    }
+   
+}
+
+else {
+    echo "No Booking Made";
+}
+
+
+
+
+
+
+?>
+
+    </div>
 
 </div>
 
-<div class= "venueimage" >
-    <img src="img/kuliyyah.jpg">
-</div>
 
-<div class="light">
-    <div class="calendar">
-        <?php include('calendar.php'); ?>
-    </div>   
-    
-    <div class="footerz">
-    <br>
-</div>
-</div>
 
 
 

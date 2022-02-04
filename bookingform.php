@@ -57,14 +57,14 @@ text-align: center;
 
         <nav>
             
-            <a href="mainpage.html"><img src="img/IIUM.png"></a>
+            <a href="mainpage.php"><img src="img/IIUM.png"></a>
 
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
+                    <li><a class="active" href="mainpage.php">Item List</a></li>
+                        <li><a href="kulliyyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
                         <li><a  href=>Contact us</a></li>
@@ -95,6 +95,7 @@ text-align: center;
 
 
 <div class="form-container">
+
   <div class="bf-title">Personal Details</div>
     <div class="content">
      <form  method="post" action="insert.php">
@@ -151,14 +152,17 @@ text-align: center;
                 <span class="details"><span style="color:red;">*</span>Programme Name</span>
                 <input type="text" name="Prog_name" placeholder="Programme Name" required>
               </div>
+              <br>
               <div class="input-box">
                 <span class="details">Programme type</span>
                 <input type="text" name="Prog_type" placeholder="Programme Type" required>
               </div>
+              <br>
               <div class="input-box">
                 <span class="details"><span style="color:red;">*</span>Total Participants</span>
                 <input type="number" name="part_tot" placeholder="Total participants" required>
               </div>
+              <br>
             <div class="input-box">
               <span class="details"><span style="color:red;">*</span>Programme Category</span>
               <div class="category"> 
@@ -171,23 +175,23 @@ text-align: center;
                 </select>
               </div>
 
-
+              <button class="btn-supportdocs"><a href="supportingdocs.php">Add Supporting Documents here</a></button><p></p>
             </div>
 
               </div>
             
-
+<br>
             
 
             </div>
 
 
-            <button class="btn-supportdocs"><a href="supportingdocs.php">Add Supporting Documents here</a></button><p></p>
+            
 
 
             <input id="agreebox" type="checkbox" required>
             <p class="declaration">By selecting box above, I/We hereby declare that the information given above is true and complete. I/We further confirm that I/We have read the Terms and Condition overleaf and agree to be bound by them. I/We agree to accept responsibility and liability for any failure in adhering to any parts of the terms and conditions and agree to compensate the University for any loss and damage to the University properties.</p>
-
+<br>
             
             <div class="btn-submit">
               <input type="submit" class="button" value="Add data">

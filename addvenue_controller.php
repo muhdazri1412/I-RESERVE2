@@ -25,6 +25,8 @@ else
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
 }
 // Close connection
+
+header('Refresh: 0, url = addvenueliaison.php');
 mysqli_close($con);
 ?>
 </html>

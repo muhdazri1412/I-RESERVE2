@@ -199,7 +199,7 @@ foreach($timeslots as $ts){
                                     
                                 </div>
                                 <div class="form-group pull-right">
-                                    <button name="submit" type="submit" class="btn btn-primary" href="bookingform.html">Continue</button>
+                                    <button name="submit" type="submit" class="btn btn-primary" href="bookingform.php">Continue</button>
                                 </div>
                             </form>
                         </div>

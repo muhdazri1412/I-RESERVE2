@@ -6,25 +6,25 @@
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <BODY class="login">
     <section class = "header">
         <nav>
-            
-            <a href="mainpage.html"><img src="img/IIUM.png"></a>
+
+            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
+                    <li><a class="active" href="mainpage.php">Item List</a></li>
+                        <li><a href="kulliyyah.php">Kuliyyah</a></li>
                         <li><a href=>Mahallah</a></li>
                         <li><a href=>Stadd</a></li>
                         <li><a  href=>Contact us</a></li>
                 </ul>
-            </div>     
+            </div>
             <i class="fa fa-bars" onclick="showmenu()" ></i>
 
         </nav>
@@ -33,22 +33,29 @@
     <div class="area">
         <img src="img/login.png" alt="garden">
         <img src="img/IIUM.png" alt="IIUM">
-        <div class="form">
-            <p>Reset Password</p><br>
-            <p>Password</p>
-            <input type="    text" placeholder="******" name="matric">
-            <p>Confirm password</p>
-            <input type="    password" placeholder="*****" name="password"><br>
-            <button class="button">Reset password</button>
 
+
+        <div class="form">
+          <form action="validationliaison.php" method ="post">
+            <p>liaison id:</p>
+            <input type="number" placeholder="matric" name="staffid" required>
+            <p>Password</p>
+            <input type="password" placeholder="password" name="password" required><br>
+            <button type="submit" class="button">Login</button>
+            <a href="login.php" class="student-login"> Login for student/STAFF</a><br>
+            <a href="" class="guest-login"> Login for  IIUM Guest</a><br>
+            <a href="registration-page.php" class="create-account">Create an account</a><br>
+            <a href="password-reset-page.php" class="forgot-password">Forgot password? Start password recovery</a>
+          </form>
         </div>
+
     </div>
 <!-----categories-->
 
 
 
 <!-------javascript for toggle menu-->
-<script>    
+<script>
 
         var navlinks = document.getElementById("navlinks")
 
@@ -58,7 +65,7 @@
         }
         function hidemenu(){
             navlinks.style.right = "-200px";
-            
+
         }
 </script>
 </BODY>
@@ -67,4 +74,3 @@
 
 </style>
 </html>
-

@@ -1,19 +1,21 @@
+<?php
+session_start();
 
+
+?>
 <html>
-
-
 <style>
            table {
   border-collapse: collapse;
   width: 70%;
-  margin-left: 300px;
+  margin-left: 270px;
   margin-right: auto;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 th, td {
   text-align: left;
-  padding: 5px;
+  padding: 4px;
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
@@ -63,7 +65,9 @@ color:white;
 text-decoration: none;
 text-align: center;
 
+
 }
+
 
 .text-center:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -98,16 +102,18 @@ text-align: center;
 <section class = "header">
         <nav>
             
-            <a href="mainpage.html"><img src="img/i-reserve.png"></a>
+            <a href="display-booking.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="mainpage.html">Item List</a></li>
-                        <li><a href="kulliyah.html">Kuliyyah</a></li>
-                        <li><a href=>Mahallah</a></li>
-                        <li><a href=>Stadd</a></li>
-                        <li><a  href=>Contact us</a></li>
+                    <li><a class="active" href="display-booking.php">All Submission</a></li>
+                        <li><a href="for approval.php">For approval</a></li>
+                        <li><a href="pending.php">Pending</a></li>
+                        <li><a href="accepted.php">Accepted</a></li>
+                        <li><a href="rejected.php">Rejected</a></li>
+                        <li><a href="addvenueliaison.php">Add venue</a></li>
+                        <li><a href="">Dashboard</a></li>
                 </ul>
             </div>     
             <i class="fa fa-bars" onclick="showmenu()" ></i>
@@ -122,16 +128,19 @@ text-align: center;
 <div class="sideliaison">
 
     <ul>
-        <li><a>John Doe</a></li>
+        <li><a onclick="location.href='liaisonprofile.php';" style="cursor: pointer;"> <?php echo $_SESSION["staffid"]?> </a></li>
         <li><a onclick="location.href='display-booking.php';" style="cursor: pointer;">All submission</a></li>
         <li><a onclick="location.href='for approval.php';" style="cursor: pointer;">for approval</a></li>
+        <li><a onclick="location.href='pending.php';" style="cursor: pointer;">pending</a></li>
         <li><a onclick="location.href='accepted.php';" style="cursor: pointer;">Accepted</a></li>
         <li><a onclick="location.href='rejected.php';" style="cursor: pointer;">Rejected</a></li>
-        <li><a >Approved</a></li>
+        <li><a onclick="location.href='addvenueliaison.php';" style="cursor: pointer;">Add venue</a></li>
         <li><a>Dashboard</a></li>
     </ul>
-
-    <button class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    <form action="logout.php">
+        <button href="logout.php" class="logoutliaison"><ion-icon name="power-sharp"><a href=""></a></ion-icon></button>
+    </form>
+    
 
 </div>
 
@@ -151,11 +160,14 @@ text-align: center;
 
 
 <?php
+
+
 $con = mysqli_connect("localhost","root","","ireserve") or die ("could not connect to mysql");
-$sql = "SELECT * FROM FORM,bookings where form.matricno=bookings.matricno";
+$sql = "SELECT * ,a.matricno AS 'matricnumber'
+        FROM  form a 
+        inner join bookings b on a.book_id=b.id 
+        inner join pdf_file c on  a.book_id=c.id ";
 $result = $con->query($sql);
-
-
 
 if ($result->num_rows > 0) {
     echo "<table ><tr>
@@ -164,8 +176,9 @@ if ($result->num_rows > 0) {
     <th>Last Name</th><th>Email</th><th>Matric No</th>
     <th>Phone Number</th><th>Advisor Phone number</th>
     <th>Address</th><th>Organisation</th><th>Programme Name</th>
-    <th>Programme type</th><th>Total participant</th><th>Category</th></tr>";
-
+    <th>Programme type</th><th>Total participant</th><th>Category</th>
+    echo '<th style='column-size: 4px;'>file name</th>'</tr>";
+    
     while ($row = $result->fetch_assoc()) {
         
         echo "<tr>";
@@ -178,7 +191,7 @@ if ($result->num_rows > 0) {
         echo "<td>" .$row['User_fname']. "</td>";
         echo "<td>" .$row['User_lname']. "</td>";
         echo "<td>" .$row['User_email']. "</td>";
-        echo "<td>" .$row['matricno']. "</td>";
+        echo "<td>" .$row['matricnumber']. "</td>";
         echo "<td>" .$row['User_phone']. "</td>";
         echo "<td>" .$row['User_advisor']. "</td>";
         echo "<td>" .$row['User_address']. "</td>";
@@ -187,6 +200,7 @@ if ($result->num_rows > 0) {
         echo "<td>" .$row['Prog_type']. "</td>";
         echo "<td>" .$row['part_tot']. "</td>";
         echo "<td>" .$row['Prog_cat']. "</td>";
+        echo "<td>" .$row['name']. "</td>";
         
        
     }
@@ -202,7 +216,7 @@ $con->close();
   ?>
 
  <div class="text-center">
-    <a href="controller/user_data_download.php" class="export-button"
+    <a href="user_data_download.php" class="export-button"
     target="_blank">Data export</a>
 
 
@@ -224,7 +238,8 @@ $con->close();
             
         }
     </script>
-
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 
