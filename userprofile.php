@@ -52,20 +52,21 @@ include('connect-db.php');
     </head>
 <BODY class="login">
     <section class = "header">
-        <nav>
-            
-            <a href="display-booking.php"><img src="img/i-reserve.png"></a>
+    <nav>
+            <a href="mainpage.php"><img src="img/i-reserve.png"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa fa-times" onclick="hidemenu()"></i>
 
                 <ul>
-                    <li><a class="active" href="display-booking.php">All Submission</a></li>
-                        <li><a href="for approval.php">For approval</a></li>
-                        <li><a href="pending.php">Pending</a></li>
-                        <li><a href="accepted.php">Accepted</a></li>
-                        <li><a href="rejected.php">Rejected</a></li>
+                    <li><a class="active" href="mainpage.php">Item List</a></li>
+                        <li><a href="kulliyah.php">Kuliyyah</a></li>
+                        <li><a href=>Mahallah</a></li>
+                        <li><a href=>Stadd</a></li>
+                        <li><a  href=>Contact us</a></li> 
+                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="userprofile.php"><img src="img/userprofile.png"></a></li>
                 </ul>
-            </div>     
+            </div>
             <i class="fa fa-bars" onclick="showmenu()" ></i>
 
         </nav>
