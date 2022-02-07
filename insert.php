@@ -23,7 +23,7 @@ $sql = "INSERT INTO form (User_fname,User_lname,User_email,matricno,User_phone,U
 if(mysqli_query($con, $sql))
 {
     echo '<script type="text/javascript"> alert("submission successful") </script>';
-    header('Refresh:0; url=mainpage.php');
+    header('location:supportingdocs.php');
   
 
 } 
