@@ -2,5 +2,5 @@
 session_start();
 unset($_SESSION["matricno"]);
 
-header("Location:mainpage.php");
+header("Location:homepage.php");
 ?>
