@@ -175,7 +175,7 @@ text-align: center;
                 </select>
               </div>
 
-              <button class="btn-supportdocs"><a href="supportingdocs.php">Add Supporting Documents here</a></button><p></p>
+              
             </div>
 
               </div>
@@ -194,7 +194,7 @@ text-align: center;
 <br>
             
             <div class="btn-submit">
-              <input type="submit" class="button" value="Add data">
+              <input type="submit" class="button" value="Add supporting docs">
                 &nbsp; &nbsp; &nbsp;
             </div>
     </form>
