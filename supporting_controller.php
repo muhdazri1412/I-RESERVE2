@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     $stmt = $conn->prepare("insert into pdf_file values('',?,?,?,?)");
     $stmt->bind_param('sssi', $pdf, $type, $data,$matricno);
     $stmt->execute();
-    header('location:bookingform.php');;
+    header('location:mainpage.php');;
     
 
   }
