@@ -147,8 +147,8 @@
 
     <div class="dash2">
         <h3>Booking Performance by Location Category</h3>
-        <div id="kuliyyahbar"></div>
-        <div id="mahallahbar"></div>
+        <div id="kuliyyahbar"><span>Kuliyyah</span></div>
+        <div id="mahallahbar"><span class="mahallah">Mahallah</span></div>
         <div id="staddbar">
         </div>
     </div>
@@ -157,24 +157,24 @@
 
         <div class="dash-stats">
             <span class="dash-stats-detail">Least Booked Venue</span>
-            <div class="dash-stats-num"></div> 
+            <div class="dash-stats-num">KICT</div> 
         </div>
 
         <div class="dash-stats">
             <span class="dash-stats-detail">Most Booked Venue</span>
-            <div class="dash-stats-num"></div> 
+            <div class="dash-stats-num">AIKOL</div> 
         </div>
         <div class="dash-stats">
             <span class="dash-stats-detail">Most Booked Venue by Guest</span>
-            <div class="dash-stats-num"></div> 
+            <div class="dash-stats-num">KICT</div> 
         </div>
         <div class="dash-stats">
             <span class="dash-stats-detail">Most Profitable Venue</span>
-            <div class="dash-stats-num"></div> 
+            <div class="dash-stats-num">AIKOL</div> 
         </div>
         <div class="dash-stats">
             <span class="dash-stats-detail">Most Booked Day</span>
-            <div class="dash-stats-num"></div> 
+            <div class="dash-stats-num">Friday</div> 
         </div>
       
     </div>
