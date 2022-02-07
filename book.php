@@ -131,8 +131,8 @@ function timeslots($duration,$cleanup,$start,$end)
        
         
         <div class="hourpicker">
-        <span class=hourlyheader>Book for one hour</span>
-        <span class=dailyheader>Book for one day</span>
+        <span class=hourlyheader>Choose timeslot</span>
+       
         </div>
 
 
