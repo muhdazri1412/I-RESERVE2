@@ -23,6 +23,14 @@
     
 }
 
+.login .header .nav-links ul li a img{
+    right:10px;
+    width:60%;
+    height:60%;
+    position: relative;
+}
+
+
 .login nav{
     display: flex;
     padding: 1% 4%;
@@ -301,12 +309,12 @@ h3{
 
 img[src*="login.png"] {
     width:50%;
-    height: 807px;
+    height:95vh;
   }
 .area img[src*="IIUM.png"]{
     width: 500px;
     position: relative;
-    bottom: 600px;
+    bottom: 700px;
     left: 280px;
 }
 
@@ -1193,6 +1201,18 @@ input[type="checkbox"]{
     margin-top:10%;
 }
 
+.dashboard .dash2 div span{
+
+    position: absolute;
+    margin-top: 1100%;
+}
+
+
+.dashboard .dash2 div  .mahallah{
+    margin-top: 700%;
+}
+
+
 .dashboard .dash3
 {
     position:absolute;
@@ -1266,7 +1286,7 @@ input[type="checkbox"]{
     position:absolute;
     display: inline;
     width:2.5%;
-    height:60%;
+    height:40%;
     bottom:10%;
     left:40%;
     background-color: #677578;
