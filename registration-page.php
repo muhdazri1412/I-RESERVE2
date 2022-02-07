@@ -54,7 +54,7 @@
 
                 <button type="submit" class="button">Register</a></button>
                 <a href="login.php" class="already">Already register? Login Here</a><br>
-                <a href="" class="guest-link">Not from IIUM? Guest register here</a><br>
+                <a href="guestregistrationpage.php" class="guest-link">Not from IIUM? Guest register here</a><br>
             </form>
         </div>
     </div>
