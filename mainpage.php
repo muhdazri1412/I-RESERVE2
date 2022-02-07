@@ -40,9 +40,7 @@ session_start();
     <h1>I-RESERVE</h1>
     <p>IIUM venue and property reservation system</p>
     <br>
-    <a href="register.php" class="register-btn">REGISTER</a>
-    <a href="login.php" class="login-btn">LOG IN</a>
-  
+    
 </div>
     </section>
 
