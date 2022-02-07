@@ -47,7 +47,6 @@ session_start();
 
         <div >
             <img src="img/kuliyyah.jpg" alt="">
-
             <p>Kuliyyah of Information and Communication Technology(KICT) </p>
             <button ><a href="checkavail.php">Details</a></button>
            
@@ -56,29 +55,58 @@ session_start();
 
         <div >
 
-        </div>
-
-        <div >
-
-        </div>
-
-        <div >
+        <img src="img/kaed.png" alt="">
+        <p>Kuliyyah of Architecture and Environmental Design(KAED) </p>
+        <button ><a href="checkavail.php">Details</a></button>
 
         </div>
 
         <div >
 
-        </div>
-
-        <div >
-
-        </div>
-
-        <div >
+        <img src="img/aikol.PNG" alt="">
+        <p>Ahmad Ibrahim Kuliyyah of Law (AIKOL) </p>
+        <button ><a href="checkavail.php">Details</a></button>
 
         </div>
 
         <div >
+
+        <img src="img/koe.PNG" alt="">
+        <p>Kuliyyah of Engineering(KOE) </p>
+        <button ><a href="checkavail.php">Details</a></button>
+
+        </div>
+
+
+        <div >
+
+        <img src="img/academy.PNG" alt="">
+        <p>Academy </p>
+        <button ><a href="checkavail.php">Details</a></button>
+
+        </div>
+
+        <div >
+
+        <img src="img/koedu.PNG" alt="">
+        <p>Kuliyyah of Education (EDU) </p>
+        <button ><a href="checkavail.php">Details</a></button>
+
+        </div>
+
+        <div >
+
+        <img src="img/kenms.PNG" alt="">
+        <p>Kuliyyah of Economics (KENMS) </p>
+        <button ><a href="checkavail.php">Details</a></button>
+
+        </div>
+
+        <div >
+
+        <img src="img/IRK.PNG" alt="">
+        <p>Kuliyyah of Islamic Revealed Knowledge and Human Science(IRKHS) </p>
+        <button ><a href="checkavail.php">Details</a></button>
 
         </div>
         
